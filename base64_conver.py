@@ -26,22 +26,22 @@ for i in data:
 print(asci_arr)
 print("asci")
 for i in asci_arr:
-    bin_arr.append(bin(i))
+    binary = bin(i)[2:]  # Convert to binary and remove '0b'
+    padded_binary = binary.zfill(8)  # Ensure each binary string is 8 bits long
+    bin_arr.append(padded_binary)
 print(bin_arr)
-print("binar")
-bin_num = str("".join(map(str, bin_arr)))
-print(bin_num)
 print('binaryjoined')
-new_bin=bin_num.replace("0b", "")
-print(new_bin)
-print("binary replaced")
-l=len(new_bin)
+bin_num = "".join(bin_arr)
+print(bin_num)
+print("Binary joined")
+l=len(bin_num)
 print(l)
-print("length")
+print("length before ")
 if l % 8 != 0:
-    new_bin += '0'
-    l=l+1
-print(new_bin)
+    padding = 8 - (l % 8)  # Calculate the required padding
+    bin_num = bin_num.ljust(l + padding, '0')  # Add trailing zeroes
+    l = len(bin_num)
+print(bin_num)
 print("binary corrected  8")
 
 # new_bin = (bin_num.replace("0b", ""))
