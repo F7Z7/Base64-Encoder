@@ -1,6 +1,3 @@
-
-
-
 data_dict = {
     "000000": "A", "010000": "Q", "100000": "g", "110000": "w",
     "000001": "B", "010001": "R", "100001": "h", "110001": "x",
@@ -20,21 +17,40 @@ data_dict = {
     "001111": "P", "011111": "f", "101111": "v", "111111": "/",
     "Padding": "="
 }
-data=input("Enter the string to be encoded: ")
-asci_arr=[]
-bin_arr=[]
+data = input("Enter the string to be encoded: ")
+asci_arr = []
+bin_arr = []
 for i in data:
     # print(ord(i))
     asci_arr.append(ord(i))
-# print(asci_arr)
+print(asci_arr)
+print("asci")
 for i in asci_arr:
-   bin_arr.append(bin(i))
+    bin_arr.append(bin(i))
 print(bin_arr)
-bin_num= str("".join(map(str, bin_arr)))
-print(bin_num.replace("0b", ""))
-binary_number = bin_num.ljust((len(bin_num) + 7) // 8 * 8, '0')
+print("binar")
+bin_num = str("".join(map(str, bin_arr)))
+print(bin_num)
+print('binaryjoined')
+new_bin=bin_num.replace("0b", "")
+print(new_bin)
+print("binary replaced")
+l=len(new_bin)
+print(l)
+print("length")
+if l % 8 != 0:
+    new_bin += '0'
+    l=l+1
+print(new_bin)
+print("binary corrected to 8")
 
-# Split into groups of 8 bits
-octet = [bin_num[i:i+8] for i in range(0, len(bin_num), 8)]
+# new_bin = (bin_num.replace("0b", ""))
+# print(new_bin)
+# print("binary without0b")
+# binary_number = bin_num.ljust((len(bin_num) + 7) // 8 * 8, '0')
+#
+# # Split into groups of 8 bits
+# octet = [bin_num[i:i+8] for i in range(0, len(bin_num), 8)]
+# octet.remove('ob')
 
-print(octet)
+# print(octet)
