@@ -42,7 +42,7 @@ if l % 8 != 0:
     new_bin += '0'
     l=l+1
 print(new_bin)
-print("binary corrected to 8")
+print("binary corrected  8")
 
 # new_bin = (bin_num.replace("0b", ""))
 # print(new_bin)
