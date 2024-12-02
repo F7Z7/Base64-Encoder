@@ -63,6 +63,8 @@ The program outputs the Base64-encoded string.
 - Binary operations and padding techniques.
 - Implementing data encoding standards from scratch.
 
+---
+
 ## Code Example
 
 ```python
