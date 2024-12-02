@@ -34,7 +34,8 @@ for i in asci_arr:
 # print(bin_arr)
 # print('binaryjoined')
 bin_num = "".join(bin_arr)
-
+while len(bin_num) % 6 != 0: #adding zeroes at last to make lenght multiple of 6
+    bin_num += "0"
 # print(int(bin_num))
 # print("Binary joined")
 # l=len(bin_num)
@@ -47,7 +48,10 @@ pre_final=[]
 for i in hex_arr:
     # print(data_dict[i])
     pre_final.append(data_dict[i])
+# Add '=' padding to make the output length a multiple of 4
+while len(pre_final) % 4 != 0:
+    pre_final.append(data_dict["Padding"])
 Base64_encoded_string = "".join(pre_final)
-print(Base64_encoded_string)
+print("Your Base64 encoded string: "+Base64_encoded_string)
 
 # print(i)
